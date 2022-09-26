@@ -58,3 +58,33 @@ public class Main {
     }
 }
  */
+
+/* 4-3. 왕실의 나이트
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        String cur = kb.next();
+        char[] row = {'1', '2', '3', '4', '5', '6', '7', '8'};
+        char[] col = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+        int x, y;
+        int cnt = 0;
+
+        int[] dx = {-2, -2, -1, -1, 1, 1, 2, 2};
+        int[] dy = {-1, 1, -2, 2, -2, 2, -1, 1};
+
+        char cur_x = cur.charAt(0);
+        char cur_y = cur.charAt(1);
+        x = cur.indexOf(cur_x) + 1;
+        y = Character.getNumericValue(cur_y);
+        int nx, ny;
+
+        for(int i = 0; i < dx.length; i++) {
+            nx = x + dx[i];
+            ny = y + dy[i];
+            if(nx >= 1 && nx <= 8 && ny >= 1 && ny <= 8) cnt++;
+        }
+        System.out.println(cnt);
+    }
+}
+ */
