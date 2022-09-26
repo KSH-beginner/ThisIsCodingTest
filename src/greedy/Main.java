@@ -71,3 +71,27 @@ public class Main {
     }
 }
  */
+
+/* 3-4. 1이 될 때까지
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int cnt = 0;
+        int n = kb.nextInt();
+        int k = kb.nextInt();
+
+        while(n != 1) {
+            if(n % k == 0) {
+                n = n / k;
+                cnt++;
+            } else {
+                n -= 1;
+                cnt++;
+            }
+        }
+        System.out.println(cnt);
+    }
+}
+ */
+
