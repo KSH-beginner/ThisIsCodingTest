@@ -34,3 +34,27 @@ public class Main {
     }
 }
  */
+
+/* 4-2. 시각
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int h = kb.nextInt();
+        int cnt = 0;
+
+        for(int i = 0; i <= h; i++) {
+            for(int j = 0; j < 60; j++) {
+                for(int k = 0; k < 60; k++) {
+                    String str_i = String.valueOf(i);
+                    String str_j = String.valueOf(j);
+                    String str_k = String.valueOf(k);
+                    String str = str_i + str_j + str_k;
+                    if(str.contains("3")) cnt++;
+                }
+            }
+        }
+        System.out.println(cnt);
+    }
+}
+ */
