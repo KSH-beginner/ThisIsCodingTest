@@ -49,3 +49,25 @@ public class Main {
     }
 }
  */
+
+/* 3-3. 숫자 카드 게임
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int answer = 0;
+        int n = kb.nextInt();
+        int m = kb.nextInt();
+
+        for(int i = 0; i< n; i++) {
+            int[] arr = new int[m];
+            for(int j = 0; j < m; j++) {
+                arr[j] = kb.nextInt();
+            }
+            int num = Arrays.stream(arr).min().getAsInt();
+            if(answer < num) answer = num;
+        }
+        System.out.println(answer);
+    }
+}
+ */
