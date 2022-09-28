@@ -88,3 +88,64 @@ public class Main {
     }
 }
  */
+
+/* 4-4. 게임 개발
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int cnt = 0, answer = 1;
+        int[] dx = {-1, 0, 1, 0};
+        int[] dy = {0, 1, 0, -1};
+        int n = kb.nextInt();
+        int m = kb.nextInt();
+        int x = kb.nextInt();
+        int y = kb.nextInt();
+        int direction = kb.nextInt();
+        int new_direction = 0;
+        int[][] check = new int[n][m];
+        int[][] gameMap = new int[n][m];
+        check[x][y] = 1;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                gameMap[i][j] = kb.nextInt();
+            }
+        }
+
+        while(true) {
+            new_direction = direction - 1;
+            if(new_direction == -1) new_direction = 3;
+            direction = new_direction;
+
+            int nx = x + dx[new_direction];
+            int ny = y + dy[new_direction];
+            if(check[nx][ny] == 0 && gameMap[nx][ny] == 0) {
+                check[nx][ny] = 1;
+                x = nx;
+                y = ny;
+                answer++;
+                cnt = 0;
+            } else {
+                cnt++;
+            }
+            if(cnt == 4) {
+                int back_direction = direction + 2;
+                if(back_direction == 4) back_direction = 0;
+                if(back_direction == 5) back_direction = 1;
+
+                nx = x + dx[back_direction];
+                ny = y + dy[back_direction];
+
+                if(gameMap[nx][ny] == 0) {
+                    x = nx;
+                    y = ny;
+                } else {
+                    break;
+                }
+                cnt = 0;
+            }
+        }
+        System.out.println(answer);
+    }
+}
+ */
