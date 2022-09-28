@@ -58,3 +58,68 @@ public class Main {
     }
 }
  */
+
+/* 5-4. 미로 탈출(BFS)
+public class Main {
+
+    static class Node {
+        int x, y;
+
+        Node(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public int getX() {
+            return x;
+        }
+
+        public int getY() {
+            return y;
+        }
+    }
+
+    static int[] dx = {-1, 1, 0, 0};
+    static int[] dy = {0, 0, -1, 1};
+    static int n, m;
+    static int[][] graph;
+
+    public static int BFS(int x, int y) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(new Node(x, y));
+        while(!queue.isEmpty()) {
+            Node cur = queue.poll();
+            x = cur.getX();
+            y = cur.getY();
+
+            for(int i = 0; i < 4; i++) {
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+
+                if(nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+                if(graph[nx][ny] == 0) continue;
+                if(graph[nx][ny] == 1) {
+                    queue.offer(new Node(nx, ny));
+                    graph[nx][ny] = graph[x][y] + 1;
+                }
+            }
+        }
+        return graph[n-1][m-1];
+    }
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        n = kb.nextInt();
+        m = kb.nextInt();
+        graph = new int[201][201];
+        kb.nextLine();
+        for(int i = 0; i < n; i++) {
+            String str = kb.nextLine();
+            for(int j = 0; j < m; j++) {
+                graph[i][j] = str.charAt(j) - '0';
+            }
+        }
+        System.out.println(BFS(0, 0));
+    }
+}
+ */
