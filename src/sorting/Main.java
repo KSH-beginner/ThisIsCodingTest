@@ -70,3 +70,42 @@ public class Main {
     }
 }
  */
+
+/* 6-12. 두 배열의 원소 교체
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int k = kb.nextInt();
+        Integer[] target_arr = new Integer[n];
+        Integer[] change_arr = new Integer[n];
+        int cnt = 0;
+        int result = 0;
+        for(int i = 0; i < n; i++) {
+            target_arr[i] = kb.nextInt();
+        }
+        for(int j = 0; j < n; j++) {
+            change_arr[j] = kb.nextInt();
+        }
+
+        Arrays.sort(change_arr, Collections.reverseOrder());
+        Arrays.sort(target_arr);
+
+        for(int i = 0; i < n; i++) {
+            if(target_arr[i] < change_arr[i]) {
+                int temp = target_arr[i];
+                target_arr[i] = change_arr[i];
+                change_arr[i] = temp;
+                cnt++;
+                if(cnt >= k) break;
+            }
+        }
+
+        for(Integer x : target_arr) {
+            result += x;
+        }
+        System.out.println(result);
+    }
+}
+ */
