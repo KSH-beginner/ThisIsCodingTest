@@ -28,3 +28,31 @@ public class Main {
     }
 }
  */
+
+/* 7-3. 반복문으로 구현한 이진 탐색
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int target = kb.nextInt();
+        Integer[] arr = new Integer[n];
+        for(int i = 0; i < n; i++) {
+            arr[i] = kb.nextInt();
+        }
+
+        int lt = 0;
+        int rt = n-1;
+
+        int mid = 0;
+        while(lt <= rt) {
+            mid = (lt + rt) / 2;
+
+            if(arr[mid] == target) break;
+            if(arr[mid] > target) rt = mid-1;
+            if(arr[mid] < target) lt = mid+1;
+        }
+        System.out.println(mid+1);
+    }
+}
+ */
