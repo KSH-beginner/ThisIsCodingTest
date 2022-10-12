@@ -1,5 +1,6 @@
 package binarysearch;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /* 7-2. 재귀함수로 구현한 이진 탐색
@@ -53,6 +54,44 @@ public class Main {
             if(arr[mid] < target) lt = mid+1;
         }
         System.out.println(mid+1);
+    }
+}
+ */
+
+/* 7-5. 부품 찾기
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        Integer[] list = new Integer[n];
+        for(int i = 0; i < n; i++) {
+            list[i] = kb.nextInt();
+        }
+        int m = kb.nextInt();
+        int[] req_list = new int[m];
+        for(int j = 0; j < m; j++) {
+            req_list[j] = kb.nextInt();
+        }
+
+        Arrays.sort(list);
+        for(int k = 0; k < m; k++) {
+            int req = req_list[k];
+            int lt = 0;
+            int rt = n-1;
+            boolean isHave = false;
+            while(lt <= rt) {
+                int mid = (lt + rt) / 2;
+                if(list[mid] > req) rt = mid-1;
+                if(list[mid] < req) lt = mid+1;
+                if(list[mid] == req) {
+                    isHave = true;
+                    break;
+                }
+            }
+            if(isHave) System.out.print("yes ");
+            else System.out.print("no ");
+        }
     }
 }
  */
