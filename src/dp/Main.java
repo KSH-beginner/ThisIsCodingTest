@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.*;
+
 /* 8-2. 피보나치 수열 (탑다운 - 재귀)
 public class Main {
 
@@ -38,6 +40,26 @@ public class Main {
         }
 
         System.out.println(dp[50]);
+    }
+}
+ */
+
+/* 8-5. 1로 만들기
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int x = kb.nextInt();
+        int[] dp = new int[x+1];
+        dp[1] = 0;
+
+        for(int i = 2; i <= x; i++) {
+            dp[i] = dp[i-1] + 1;
+            if(i % 2 == 0) dp[i] = Math.min(dp[i], dp[i/2] + 1);
+            if(i % 3 == 0) dp[i] = Math.min(dp[i], dp[i/3] + 1);
+            if(i % 5 == 0) dp[i] = Math.min(dp[i], dp[i/5] + 1);
+        }
+        System.out.println(dp[x]);
     }
 }
  */
