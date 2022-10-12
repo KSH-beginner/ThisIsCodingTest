@@ -95,3 +95,38 @@ public class Main {
     }
 }
  */
+
+/* 7-8. 떡볶이 떡 만들기
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int m = kb.nextInt();
+        int[] cake = new int[n];
+        for(int i = 0; i < n; i++) {
+            cake[i] = kb.nextInt();
+        }
+        Arrays.sort(cake);
+
+        int answer = 0;
+
+        int lt = 1;
+        int rt = cake[n-1];
+        while(lt <= rt) {
+            int sum = 0;
+            int H = (lt+rt)/2;
+            for(int i = 0; i < n; i++) {
+                if(cake[i] > H) sum += cake[i] - H;
+            }
+            if(sum > m) lt = H+1;
+            if(sum < m) rt = H-1;
+            if(sum == m) {
+                answer = H;
+                break;
+            }
+        }
+        System.out.println(answer);
+    }
+}
+ */
